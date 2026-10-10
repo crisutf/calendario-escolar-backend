@@ -7,14 +7,14 @@ import { signJwt } from '../middleware/authMiddleware.js';
 import { addToBlacklist } from '../utils/tokenManager.js';
 import { hashPassword, verifyPassword } from '../utils/passwords.js';
 
-const GOOGLE_CLIENT_ID = (process.env.GOOGLE_CLIENT_ID || '354181204077-6fl12f30sv9rabelq6ddupahvrapsg2q.apps.googleusercontent.com').trim();
-const GOOGLE_CLIENT_SECRET = (process.env.GOOGLE_CLIENT_SECRET || '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').trim();
+const GOOGLE_CLIENT_ID = (process.env.GOOGLE_CLIENT_ID || '').trim();
+const GOOGLE_CLIENT_SECRET = (process.env.GOOGLE_CLIENT_SECRET || '').trim();
 
-const GOOGLE_REDIRECT_URI = (process.env.GOOGLE_REDIRECT_URI || 'https://dev-management-digital-v1.crisu.qzz.io/api/auth/google').trim();
-const FRONTEND_URL = (process.env.FRONTEND_URL || 'https://digital.crisu.qzz.io').trim();
-const FIRST_ADMIN_EMAIL = (process.env.FIRST_ADMIN_EMAIL || 'cristiancorban210@gmail.com').trim().toLowerCase();
+const GOOGLE_REDIRECT_URI = (process.env.GOOGLE_REDIRECT_URI || '').trim();
+const FRONTEND_URL = (process.env.FRONTEND_URL || '').trim();
+const FIRST_ADMIN_EMAIL = (process.env.FIRST_ADMIN_EMAIL || '').trim().toLowerCase();
 const ROOT_EMAIL = (process.env.ROOT_ADMIN_EMAIL || FIRST_ADMIN_EMAIL).trim().toLowerCase();
-const ADMIN_SECRET_KEY = (process.env.ADMIN_SECRET_KEY || 'M@n0r04080').trim();
+const ADMIN_SECRET_KEY = (process.env.ADMIN_SECRET_KEY || '1234567890').trim();
 
 function getOAuthClient(redirectUri = GOOGLE_REDIRECT_URI) {
   return new google.auth.OAuth2(GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, redirectUri);
