@@ -1,0 +1,11 @@
+{
+  "maintenance": {
+    "mode": false,
+    "message": "",
+    "updatedAt": "",
+    "updatedBy": {
+      "email": "admin@crisutf.dev",
+      "name": "Crisutf"
+    }
+  }
+}
